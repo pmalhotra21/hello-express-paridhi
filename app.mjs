@@ -28,6 +28,11 @@ app.get('/api/paridhi', (req, res) => {
   res.json({ myVar: 'Hello from paridhi!' });
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
