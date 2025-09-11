@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 // Serve yourname.html
 app.get('/paridhi', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'paridhi.html'));
-});
+}); 
 
 // API endpoint
 app.get('/api/paridhi', (req, res) => {
