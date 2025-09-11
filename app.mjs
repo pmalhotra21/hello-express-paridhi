@@ -1,3 +1,8 @@
+
+---
+
+## `app.mjs` (final)
+```js
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -18,10 +23,10 @@ app.get('/', (req, res) => {
   res.send(`Hello Express 👋 <a href="/paridhi">Go to my page</a>`);
 });
 
-// Serve yourname.html
+// Serve paridhi.html
 app.get('/paridhi', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'paridhi.html'));
-}); 
+});
 
 // API endpoint
 app.get('/api/paridhi', (req, res) => {

@@ -13,14 +13,12 @@ This is my assignment repository for demonstrating a **standard Git-based develo
   - `/api/query?name=YourName` → Example query parameter
   - `/api/url/:id` → Example URL parameter
   - `/api/body` → Example POST body
+  - `/health` → Health check endpoint returning `{ "status": "ok" }`
 
 ---
 
 ## ⚙️ How to Run Locally
 
 ```bash
-# 1. Install dependencies
 npm install
-
-# 2. Start the server
 npm start
