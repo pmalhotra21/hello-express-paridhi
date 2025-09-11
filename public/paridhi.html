@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>patidhi Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paridhi Page</title>
 </head>
 <body>
-  <h1>Welcome to paridhi's Page 🎉</h1>
+  <h1>Welcome to Paridhi's Page 🎉</h1>
   <a href="/">Home</a>
 
   <script>
@@ -15,7 +15,7 @@
       .then(data => {
         document.body.innerHTML += `<p>API says: ${data.myVar}</p>`;
       })
-      .catch(err => {
+      .catch(() => {
         document.body.innerHTML += `<p>Error fetching API</p>`;
       });
   </script>
