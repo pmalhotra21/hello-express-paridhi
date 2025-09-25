@@ -1,11 +1,7 @@
-
----
-
-## `app.mjs` (final)
-```js
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import emailRoutes from './routes/email.js'; // ✅ your email route
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +13,7 @@ const __dirname = dirname(__filename);
 // Serve static files from public/
 app.use(express.static(join(__dirname, 'public')));
 app.use(express.json());
+app.use('/email', emailRoutes); // ✅ hook email route
 
 // Home route
 app.get('/', (req, res) => {
