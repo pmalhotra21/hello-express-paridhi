@@ -1,3 +1,5 @@
+import emailRoutes from './routes/email.js'
+
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -12,6 +14,8 @@ const __dirname = dirname(__filename);
 // Serve static files from public/
 app.use(express.static(join(__dirname, 'public')));
 app.use(express.json());
+app.use('/email', emailRoutes);
+
 
 // Home route
 app.get('/', (req, res) => {
