@@ -3,6 +3,15 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import emailRoutes from './routes/email.js'; // ✅ your email route
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+import mongoose from 'mongoose';
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
