@@ -1,7 +1,8 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import emailRoutes from './routes/email.js'; // ✅ your email route
+import emailRoutes from './routes/email.js'; // ✅ email route
+import bookRoutes from './routes/books.mjs'; // ✅ NEW book route
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -11,18 +12,16 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Get current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Serve static files from public/
 app.use(express.static(join(__dirname, 'public')));
 app.use(express.json());
-app.use('/email', emailRoutes); // ✅ hook email route
+app.use('/email', emailRoutes); // ✅ existing route
+app.use('/api/books', bookRoutes); // ✅ new books API
 
 // Home route
 app.get('/', (req, res) => {
