@@ -23,10 +23,11 @@ app.use(express.json());
 app.use('/email', emailRoutes); // ✅ existing route
 app.use('/api/books', bookRoutes); // ✅ new books API
 
-// Home route
+
 app.get('/', (req, res) => {
-  res.send(`Hello Express 👋 <a href="/paridhi">Go to my page</a>`);
+  res.sendFile(join(__dirname, 'public', 'index.html'));
 });
+
 
 // Serve paridhi.html
 app.get('/paridhi', (req, res) => {
